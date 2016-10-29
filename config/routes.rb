@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   		put :accept
   	end
   end
+  resources :posts, only: [:edit, :create, :update, :destroy]
 
 end
