@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'activities/index'
+
   devise_for :users, controllers: {registrations: 'registrations'}
   root 'pages#home'
   resources :users, only: [:show, :index]
@@ -8,5 +10,6 @@ Rails.application.routes.draw do
   	end
   end
   resources :posts, only: [:edit, :create, :update, :destroy]
+  resources :activities, only: [:index]
 
 end
